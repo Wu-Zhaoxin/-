@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    /* css3盒子模型,内边距和边线不会撑开盒子 */
+    box-sizing: border-box;
+    /* background-color: rgb(242, 242, 242); */
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+}
+
+#todoapp {
+    /* position: relative; */
+    height: 100%;
+    background-color: rgb(242, 242, 242);
+}
+
+.header {
+    height: 180px;
+    /* background-color: skyblue; */
+} 
+
+h1 {
+    /* display: inline-block; */
+    height: 180px;
+    text-align: center;
+    line-height: 180px;
+    font-weight: lighter;
+    font-size: 50px;
+    color: brown;
+    margin: 0 auto;
+    /* background-color: rgb(189, 189, 138); */
+    /* top: 60px;
+    left: 50%;
+    transform: translate(-50%, 0); */
+}
+
+.main {
+    position: relative;
+    width: 450px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    /* background-color: pink; */
+    box-shadow: 2px 2px 12px rgb(198, 198, 198);
+}
+
+.index {
+    font-size: 15px;
+}
+
+label {
+    margin-left: 15px;
+}
+
+input {
+    width: 450px;
+    height: 50px;
+    padding: 10px;
+    font-size: 17px;
+    border: none;
+    outline:none;
+    /* 斜体 */
+    font-style: italic;
+    border-bottom: 3px solid rgb(233, 233, 233);
+    background-color: rgb(252, 252, 252);
+}
+
+ul {
+    /* width: 450px; */
+    /* background-color: pink; */
+    font-size: 17px;
+    line-height: 48px;
+    color: rgb(129, 129, 129);
+    background-color: rgb(252, 252, 252);
+}
+
+li {
+    height: 48px;
+    border-bottom: 2px solid rgb(244, 244, 244);
+    padding-left: 7px;
+    padding-right: 10px;
+}
+.destroy {
+    display: none;
+    float: right;
+    margin-top: 17px;
+    margin-right: 10px;
+    width: 10px;
+    height: 10px;
+    border: none;
+    background-color:transparent;
+
+}
+li:hover .destroy {
+    display: block;
+}
+.info {
+    position: relative;
+    width: 450px;
+    height: 28px;
+    background-color: pink;
+}
+
+.top {
+    font-size: 5px;
+    width: 450px;
+    line-height: 28px;
+    color: rgb(129, 129, 129);
+    background-color: rgb(252, 252, 252);
+    border-bottom: 1px solid rgb(213, 213, 213);
+}
+.top span:nth-child(odd) {
+    padding-left: 10px;
+    color: rgb(159, 159, 159);
+}
+.top span:nth-child(even) {
+    float: right;
+    padding-right: 10px;
+}
+.clear-completed {
+    float: right;
+    padding-top: 7px;
+    padding-right: 10px;
+    color: rgb(159, 159, 159);
+    border: none;
+    background-color:transparent;
+}
+.clear-completed:hover {
+    color: rgba(186, 10, 10, 0.579);
+}
+.middle {
+    /* position: absolute; */
+    margin: 0 auto;
+    width: 445px;
+    height: 4px;
+    background-color: rgb(234, 234, 234);
+    border: 1px solid rgb(213, 213, 213);
+    border-top: none;
+}
+.bottom {
+    margin: 0 auto;
+    /* position: absolute; */
+    width: 439px;
+    height: 4px;
+    background-color: rgb(234, 234, 234);
+    border: 1px solid rgb(213, 213, 213);
+    border-top: none;
+
+}
