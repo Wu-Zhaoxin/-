@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .map {
+            position: relative;
+            width: 747px;
+            height: 616px;
+            /* background-color: blue; */
+            background: url(img/map.png) no-repeat;
+            background-size: 100%;
+            margin: 0 auto;
+        }
+        .city {
+            position: absolute;
+            top: 228px;
+            right: 200px;
+            color: #fff;
+        }
+        .dotted {
+            width: 7px;
+            height: 7px;
+            background-color: #09f;
+            border-radius: 50%;
+        }
+        /* css3新特性：属性选择器 */
+        .city div[class^="pulse"] {
+            position: absolute;
+            /* 这种居中写法可以保证子盒子变化后也位于父级中央！ */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 7px;
+            height: 7px;
+            /* 水平 垂直 阴影大小 颜色 */
+            box-shadow: 0 0 12px #09f;
+            border-radius: 50%;
+            /* linear匀速 infinite循环 */
+            animation: pulse 1.2s linear infinite;
+        }
+        .city div.pulse2 {
+            animation-delay: 0.4s;
+        }
+        .city div.pulse3 {
+            animation-delay: 0.9s;
+        }
+
+        @keyframes pulse {
+            0% {
+
+            }
+            70% {
+                width: 40px;
+                height: 40px;
+                opacity: 1;
+            }
+            100% {
+                width: 70px;
+                height: 70px;
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="map">
+        <div class="city">
+            <div class="dotted">
+            <div class="pulse1"></div>
+            <div class="pulse2"></div>
+            <div class="pulse3"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
