@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrap" id="app">
+        <!-- 上部搜索区域 -->
+        <div class="search_form">
+            <!-- logo -->
+            <div class="logo"><img src="" alt="logo"></div>
+            <!-- 搜索栏 -->
+            <div class="form_group">
+                <!-- 文本框 -->
+                <input type="text" @keyup.enter="searchWeather" v-model="city" class="input_text" placeholder="请输入查询的城市">
+                <!-- 按钮 -->
+                <button class="input_sub">搜索</button>
+            </div>
+            <!-- 热搜 -->
+            <div class="hotkey">
+                <a href="javascript:;" @click="changeCity('太原')">太原</a>
+                <a href="javascript:;" @click="changeCity('烟台')">烟台</a>
+                <a href="javascript:;" @click="changeCity('广州')">广州</a>
+                <a href="javascript:;" @click="changeCity('深圳')">深圳</a>
+            </div>
+        </div>
+        <!-- 下部列表区域 -->
+        <ul class="weather_list">
+            <li v-for="item in weatherList">
+                <div class="info_type">
+                    <span class="iconfont">{{ item.type }}</span>
+                </div>
+                <div class="info_temp">
+                    <b>{{ item.low }}</b>
+                    ~
+                    <b>{{ item.high }}</b>
+                </div>
+                <div class="info_date"><span>{{ item.date }}</span></div>
+            </li>
+        </ul>
+    </div>
+    <script src="http://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./main.js"></script>
+
+</body>
+</html>
