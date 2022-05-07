@@ -1,0 +1,44 @@
+/* music播放图标 */
+#a {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: blue;
+}
+/* 封面 */
+.cover {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+/* mv图标 */
+.song_list span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: 1px solid rgb(255, 0, 0);
+}
+/* mv遮罩层 */
+/* .mask {
+} */
+.playing {
+    animation-name: Rotate;
+    animation-iteration-count: infinite;
+    /* animation-play-state: paused; */
+    animation-timing-function: linear;
+    animation-duration: 5s;
+}
+
+@keyframes Rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+/* 评论头像 */
+dt img{
+    width:20px;
+}
