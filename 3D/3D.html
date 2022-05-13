@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D</title>
+    <style>
+        body {
+            perspective: 200px;
+        }
+        .box {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            transition: all .4s;
+            transform-style: preserve-3d;
+            backface-visibility: hidden;
+        }
+        .box:hover {
+            transform: rotateY(180deg);
+        }
+        .front,
+        .back {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+
+        }
+        .front {
+            font-size: 30px;
+            text-align: center;
+            line-height: 200px;
+            color: aliceblue;
+            background-color: pink;
+            z-index: 1;
+            /* transform: translateZ(1px); */
+
+        }
+        .back {
+            font-size: 30px;
+            text-align: center;
+            line-height: 200px;
+            color: aliceblue;
+            background-color: purple;
+            transform: rotateY(180deg);
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="box">
+        <div class="front">管川</div>
+        <div class="back">是猪</div>
+    </div>
+</body>
+</html>

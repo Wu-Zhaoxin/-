@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .focus {
+
+            position: relative;
+            top: 200px;
+            left: 200px;
+            width: 200px;
+            height: 150px;
+            border: 1px solid black;
+        }
+        .arrow_l,
+        .arrow_r {
+            z-index: 1;
+            display: none;
+        }
+        .arrow_l {
+            position: absolute;
+            top: 70px;
+            background-color: pink;
+        }
+        .arrow_r {
+            position: absolute;
+            top: 70px;
+            right: 0;
+            background-color: pink;
+        }
+        .focus ul {
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* 默认宽度为父级宽度 */
+            width: 800%;  
+            height: 20px;
+            /* background-color: red; */
+        }
+        ul li {
+            margin-top: 10px;
+            margin-right: 1px;
+            width: 200px;
+            height: 130px;
+            float: left;
+            list-style: none;
+            background-color: skyblue;
+        }
+        ol {
+            position: absolute;
+            left: 60px;
+            top: 125px;
+        }
+        /* .circle li:hover {
+            background: url("dz.png") no-repeat;
+        } */
+        ol li {
+            width: 12px;
+            height: 12px;
+            background: url("C:\\Users\\WZX\\Desktop\\animation\\yq.png") no-repeat;
+            margin: 1px;
+            float: left;
+            /* background-color: red; */
+            list-style: none;
+        }
+        .current {
+            width: 12px;
+            height: 12px;
+            background: url("C:\\Users\\WZX\\Desktop\\animation\\dz.png") no-repeat;
+            margin: 1px;
+            float: left;
+            /* background-color: red; */
+            list-style: none;
+        }
+
+    </style>
+    <script src="ani.js"></script>
+    <script src="index.js"></script>
+</head>
+<body>
+    <div class="focus f1">
+
+        <a href="javascript:;" class="arrow_l">
+            &lt;
+        </a>
+        <a href="javascript:;" class="arrow_r">
+            &ge;
+        </a>
+
+        <ul>
+            <li>
+                <a href="#">1</a>
+            </li>
+            <li>
+                <a href="#">2</a>
+            </li>
+            <li>
+                <a href="#">3</a>
+            </li>
+            <li>
+                <a href="#">4</a>
+            </li>
+        </ul>
+
+        <ol class="circle">
+
+        </ol>
+    </div>
+</body>
+</html>

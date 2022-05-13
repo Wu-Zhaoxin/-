@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father {
+            position: fixed;
+            top: 100px;
+            right: 0;
+            width: 80px;
+            height: 60px;
+            background-color: pink;
+        }
+        .con {
+            position: absolute;
+            z-index: 1;
+            right: -80px;
+            width: 160px;
+            height: 60px;
+            display: inline-block;
+            background-color: blue;
+            line-height: 60px;
+            text-align: center;
+        }
+        .sliderbar {
+            display: block;
+            z-index: 2;
+            position: fixed;
+            top: 100px;
+            right: 0;
+            width: 80px;
+            height: 60px;
+            background-color: rgba(224, 42, 42, 1);
+            line-height: 60px;
+            text-align: center;
+        }
+  
+    </style>
+    <script src="ani.js"></script>
+</head>
+
+<body>
+    <div class="father">
+            <div class="sliderbar">←</div>
+            <div class="con">问题反馈</div>
+    </div>
+
+    <script>
+        var sliderbar = document.querySelector('.sliderbar');
+        var con = document.querySelector('.con')
+        sliderbar.addEventListener('mouseenter', function() {
+            animate(con, -160, function() {
+            sliderbar.innerHTML = '→'
+            })
+        })
+        sliderbar.addEventListener('mouseleave', function() {
+            animate(con, 0, function() {
+            sliderbar.innerHTML = '←'
+            })
+        })
+        
+
+    </script>
+</body>
+</html>

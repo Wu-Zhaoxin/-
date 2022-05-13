@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .sliderbar {
+            position: absolute;
+            left: 50%;
+            margin-left: 600px;
+            top: 300px;
+            background-color: skyblue;
+            width: 40px;
+            height: 100px;
+        }
+        .w {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        .header {
+            height: 150px;
+            background-color: purple;
+        }
+        .banner {
+            width: 1194px;
+            height: 130px;
+            border: 3px solid blue;
+        }
+        .main {
+            height: 900px;
+            background-color: red;
+        }
+        .goback {
+            /* display: block; */
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
+    <script src="animata.js"></script>
+</head>
+<body>
+    <div class="sliderbar">
+        <span class="goback">返回顶部</span>
+    </div>
+    <div class="header w"></div>
+    <div class="banner w"></div>
+    <div class="main w"></div>
+    <script>
+        var sliderbar= document.querySelector('.sliderbar');
+        var banner = document.querySelector('.banner')
+        var main = document.querySelector('.main');
+        var goback = document.querySelector('.goback')
+        var mainTop = main.offsetTop
+        var bannerTop = banner.offsetTop
+        var sliderbarTop = sliderbar.offsetTop - bannerTop;
+        document.addEventListener('scroll', function(){
+            console.log(window.pageYOffset);
+            if (window.pageYOffset >= bannerTop) {
+                sliderbar.style.position = 'fixed';
+                sliderbar.style.top = sliderbarTop + 'px'
+            } else {
+                sliderbar.style.position = 'absolute';
+                sliderbar.style.top = '300px'
+            }
+            if (window.pageYOffset >= mainTop) {
+                goback.style.display = 'block';
+            } else {
+                goback.style.display = 'none';
+            }
+        })
+
+        goback.addEventListener('click', function() {
+            animate(window, 0);
+        })
+    </script>
+</body>
+</html>

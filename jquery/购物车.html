@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            text-decoration: none;
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            width: 202px;
+            height: 52px;
+            background-color: skyblue;
+            text-align: center;
+            line-height: 50px;
+        }
+        .l {
+            display: block;
+            float: left;
+            width: 50px;
+            height: 52px;
+            background-color: pink;
+        }
+        input {
+            display: block;
+            float: left;
+            width: 100px;
+            height: 50px;
+            background-color: #f0ecec;
+            border: 1px solid black;
+        }
+        .r {
+            display: block;
+            float: right;
+            width: 50px;
+            height: 52px;
+            background-color: pink;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <div class="p-price">￥12.60</div>
+    <div class="p-num">
+        <div>
+            <a href="#" class="l">-</a>
+            <input type="text" class="itxt" value="1">
+            <a href="#" class="r">+</a>
+        </div>
+    </div>
+    <div class="p-sum">￥12.60</div>
+    <script>
+        $(".r").click(function() {
+            var n = $(this).siblings('input').val();
+            console.log(n);
+            n++;
+            $(this).siblings("input").val(n);
+            // 计算总价
+            var p = $(this).parent().parent().siblings(".p-price").html();
+            console.log(p);
+            p = p.substr(1);
+            var price = (p * n).toFixed(2);  // 保留两位小数
+            // $(this).parent().parent().siblings(".p-sum").html("￥" + price);
+            $(this).parents(".p-num").siblings(".p-sum").html("￥" + price);
+        })
+        $(".l").click(function() {
+            var n = $(this).siblings('input').val();
+            if (n == 1) {
+                return false;
+            }
+            console.log(n);
+            n--;
+            $(this).siblings("input").val(n);
+            // 计算总价
+            var p = $(this).parent().parent().siblings(".p-price").html();
+            console.log(p);
+            p = p.substr(1);
+            var price = (p * n).toFixed(2);  // 保留两位小数
+            // $(this).parent().parent().siblings(".p-sum").html("￥" + p * n);
+            $(this).parents(".p-num").siblings(".p-sum").html("￥" + price);
+        })
+        $(".itxt").change(function() {
+            var n = $(this).val();
+            var p = $(this).parents(".p-num").siblings(".p-price").html();
+            p = p.substr(1);
+            $(this).parents(".p-num").siblings(".p-sum").html("￥" + (p * n).toFixed(2))
+        })
+    </script>
+</body>
+</html>

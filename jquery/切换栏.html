@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            list-style: none;
+        }
+        .tab_list {
+            width: 450px;
+            height: 40px;
+            background-color: skyblue;
+        }
+        .tab_list .current {
+            background-color: #c81623;
+            color:#fff
+        }
+        .tab_list ul li {
+            float: left;
+            width: 90px;
+            height: 40px;
+            border: 1px solid black;
+        }
+        .tab_con {
+            width: 450px;
+            height: 300px;
+            background-color: pink;
+        }
+        .tab_con .item {
+            display: none;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="tab_list">
+        <ul>
+            <li class="current">视频介绍</li>
+            <li>规格与包装</li>
+            <li>售后保障</li>
+            <li>商品评价（5000）</li>
+            <li>手机社区</li>
+        </ul>
+    </div>
+    <div class="tab_con">
+        <div class="item" style="display: block;">
+            商品介绍内容
+        </div>
+        <div class="item">
+            规格内容
+        </div>
+        <div class="item">
+            售后内容
+        </div>
+        <div class="item">
+            评价内容
+        </div>
+        <div class="item">
+            社区内容
+        </div>
+    </div>
+
+    <script>
+        $(function() {
+            $(".tab_list li").click(function() {
+                $(this).addClass("current").siblings().removeClass("current");
+                var index = $(this).index();
+                $(".tab_con .item").eq(index).show().siblings().hide()
+            })
+    })
+    </script>
+</body>
+</html>

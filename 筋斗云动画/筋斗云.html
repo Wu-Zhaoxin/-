@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+        }
+        .c-nav {
+            position: relative;
+            width: 600px;
+            height: 30px;
+            background-color: rgba(165, 42, 42, 0.3);
+            border: 1px solid black;
+            border-radius: 5px;
+            margin: 0 auto;
+        }
+        span {
+            margin-top: 6px;
+            margin-left: 6px;
+            position: absolute;
+            display: block;
+            border-radius: 5px;
+            width: 76px;
+            height: 24px;
+            background-color: brown;
+        }
+        ul {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            /* overflow: hidden; */
+            /* background-color: red; */
+        }
+        li {
+            /* position: absolute; */
+            float: left;
+            width: 75px;
+            height: 23px;
+            background-color: skyblue;
+            border: black 1px solid;
+            border-radius: 6px;
+            margin: 3px;
+            list-style: none;
+            line-height: 23px;
+            text-align: center;
+        }
+        a {
+            color: brown;
+            font-weight: 800;
+        }
+    </style>
+    <script src="ani.js"></script>
+    <script>
+        window.addEventListener('load', function() {
+            var cloud = document.querySelector('.cloud');
+            var c_nav = document.querySelector('.c-nav');
+            var lis = c_nav.querySelectorAll('li');  // 默认选第一个
+            // var a = lis.offsetLeft
+            // console.log(a)
+            for (var i = 0; i < lis.length; i++) {
+                lis[i].addEventListener('mouseenter', function() {
+                    animate(cloud, this.offsetLeft);
+                    console.log(this.offsetLeft, cloud.offsetLeft);
+                });
+            }
+        })
+    </script>
+</head>
+<body>
+    <div id="c_nav" class="c-nav">
+        <span class="cloud"></span>
+        <ul>
+            <li class="current"><a href="#">首页新闻</a></li>
+            <li><a href="#">首页新闻</a></li>
+            <li><a href="#">首页新闻</a></li>
+            <li><a href="#">首页新闻</a></li>
+            <li><a href="#">首页新闻</a></li>
+            <li><a href="#">首页新闻</a></li>
+            <li><a href="#">首页新闻</a></li>
+        </ul>
+    </div>
+</body>
+</html>
