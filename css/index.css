@@ -13,6 +13,9 @@ a {
     text-decoration: none;
 }
 
+div {
+    box-sizing:border-box;
+}
 /* 搜索模块 */
 .search-index {
     display: flex;
@@ -25,18 +28,40 @@ a {
     height: 44px;
     min-width: 320px;
     max-width: 540px;
-    background-color: pink;
+    /* background-color: pink; */
     margin: 0 auto;
+    background-color: #f6f6f6;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
 }
 
 .search {
+    position: relative;
+    line-height: 27px;
+    border: 1px solid #ccc;
     flex: 1;
+    font-size: 12px;
+    color: #666;
+    margin: 7px 10px;
+    padding-left: 25px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
 }
 
+.search::before {
+    content: "";
+    position: absolute;
+    top: 7px;
+    left: 5px;
+    width: 15px;
+    height: 15px;
+    background: url(../images/sprite.png) no-repeat -59px -279px;
+    background-size: 104px auto;
+}
 .user {
     width: 44px;
     height: 44px;
-    background-color: purple;
+    /* background-color: purple; */
     font-size: 12px;
     text-align: center;
     color: #2eaae0;
@@ -49,5 +74,5 @@ a {
     height: 23px;
     background: url(../images/sprite.png) no-repeat -59px -194px;
     background-size: 104px auto;
-    margin: 4px auto 0;
+    margin: 4px auto -2px;
 }
