@@ -17,6 +17,7 @@ ul {
 
 a {
     text-decoration: none;
+    color: #222;
 }
 
 div {
@@ -101,4 +102,21 @@ div {
 
 .local-nav li {
     flex: 1;
+}
+
+.local-nav a {
+    display: flex;
+    flex-direction: column;
+    /* 侧轴居中 */
+    align-items: center;
+    font-size: 12px;
+}
+
+.local-nav-icon {
+    width: 32px;
+    height: 32px;
+    background-color: pink;
+    margin-top: 8px;
+    background: url(../images/localnav_bg.png) no-repeat 0 0;
+    background-size: 32px auto;
 }
