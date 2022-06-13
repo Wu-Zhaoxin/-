@@ -273,3 +273,20 @@ nav {
     border-right: 2px solid #fff;
     transform: rotate(45deg);
 }
+
+.row {
+    display: flex;
+}
+
+.row a {
+    flex: 1;
+    border-bottom: 1px solid #ccc;
+}
+
+.row a:nth-child(1) {
+    border-right: 1px solid #eee;
+}
+
+.row a img {
+    width: 100%;
+}
